@@ -1,8 +1,12 @@
 import customtkinter as ctk
 from screeninfo import get_monitors
 import re
+import subprocess
 
 
+def open_new_file():
+    root.destroy()
+    subprocess.run(["python", "homepage.py"])  
 root = ctk.CTk()
 # Setting appearance mode and color theme 
 ctk.set_appearance_mode("light")
@@ -26,6 +30,36 @@ loginFrame = ctk.CTkFrame(master=root, corner_radius=8, border_width=1, border_c
 loginFrame.pack(pady=20)
 
 
+import mysql.connector
+
+def search_user(query, property_name):
+    db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    passwd="pranavmysql",
+    database="newuserdb"
+)
+    mycursor = db.cursor()
+    mycursor.execute(f"SELECT * FROM newuser WHERE {property_name} = '{query}'")
+    data = mycursor.fetchone()
+
+
+    all_entries = {} if data is None else {
+        'name' : data[0],
+        'email' : data[1],
+        'password' : data[2],
+        'age' : data[3],
+        'contact' : data[4],
+        'created' : data[5],
+        'id' : data[6],
+    }
+
+    if query == all_entries.get(property_name):
+        return True, all_entries
+    else:
+        return False, {}
+  
+
 def validateLogIn():
     username = userEntry.get()
     password = passEntry.get()
@@ -38,6 +72,23 @@ def validateLogIn():
     else:
         error_label.configure(text="")
         error_label.grid_forget()
+        user_exists, user_data = search_user(username, 'name')
+        print(user_exists)
+        if user_exists:
+            if user_data.get('password') == password:
+                error_label.configure(text="Login Successfull")
+                error_label.pack(pady = (20, 0))
+                open_new_file()
+                
+
+            else:
+                error_label.configure(text="Please check your password and try again")
+                error_label.pack(pady = (20, 0))
+        else:
+            error_label.configure(text="User doesn't exists. SignUp!")
+            error_label.pack(pady = (20, 0))
+
+        
         
 
 # Creating userentry and passentry for username and password
