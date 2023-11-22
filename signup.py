@@ -8,7 +8,7 @@ import subprocess
 
 def open_new_file():
     root.destroy()
-    subprocess.run(["python", "homepage.py"]) 
+    subprocess.run(["python", "login.py"]) 
     
 def add_user():
     username = userEntry.get()
@@ -118,13 +118,13 @@ def validate_signupForm():
         error_label.configure(text="Please enter a username", text_color="red", font=('inter', 18))
         error_label.grid(row=6, column=0, columnspan=2, pady=(0, 30))
     elif not is_valid_email(email):
-        error_label.configure(SignupFrame,  text="Invalid email format", text_color="red", font=('inter', 18))
+        error_label.configure(text="Invalid email format", text_color="red", font=('inter', 18))
         error_label.grid(row=6, column=0, columnspan=2, pady=(0, 30))
     elif not age.isdigit() or int(age) >= 100:
-        error_label.configure(SignupFrame,  text="Enter a valid age (must be a number and less than 100)", text_color="red", font=('inter', 18))
+        error_label.configure(text="Enter a valid age (must be a number and less than 100)", text_color="red", font=('inter', 18))
         error_label.grid(row=6, column=0, columnspan=2, pady=(0, 30))
     elif not (contact.isdigit() and len(contact) == 10):
-        error_label.configure(SignupFrame,  text="Contact number must be a number (must be a 10-digit-no)", text_color="red", font=('inter', 18))
+        error_label.configure(text="Contact number must be a number (must be a 10-digit-no)", text_color="red", font=('inter', 18))
         error_label.grid(row=6, column=0, columnspan=2, pady=(0, 30))
     else:
         # All fields are valid, clear the error message and proceed with signup
@@ -143,7 +143,7 @@ contactEntry = ctk.CTkEntry(master=SignupFrame, placeholder_text="Contact No.", 
 contactEntry.grid(row=4, column=0, pady=(10,15), padx=10)
 
 # login button
-button = ctk.CTkButton(master=SignupFrame, text='Sign Up', font=('inter', 23), fg_color="grey", command=validate_signupForm)
+button = ctk.CTkButton(master=SignupFrame, text='Sign Up', font=('inter', 23), fg_color="#5790DF", command=validate_signupForm)
 button.grid(row=5, column=0, pady=20, padx=200)
 
 

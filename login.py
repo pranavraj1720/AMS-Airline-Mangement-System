@@ -2,6 +2,7 @@ import customtkinter as ctk
 from screeninfo import get_monitors
 import re
 import subprocess
+from session_manager import sessionManager
 
 
 def open_new_file():
@@ -28,6 +29,7 @@ logIn.pack(pady=50, padx=20)
 # Creating login frame 
 loginFrame = ctk.CTkFrame(master=root, corner_radius=8, border_width=1, border_color="black", fg_color="white")
 loginFrame.pack(pady=20)
+
 
 
 import mysql.connector
@@ -76,11 +78,10 @@ def validateLogIn():
         print(user_exists)
         if user_exists:
             if user_data.get('password') == password:
+                sessionManager().set_current_user(username)
+                open_new_file()
                 error_label.configure(text="Login Successfull")
                 error_label.pack(pady = (20, 0))
-                open_new_file()
-                
-
             else:
                 error_label.configure(text="Please check your password and try again")
                 error_label.pack(pady = (20, 0))
@@ -104,8 +105,7 @@ error_label = ctk.CTkLabel(loginFrame, text="")
 error_label.pack()
 
 # login button
-button = ctk.CTkButton(master=loginFrame, 
-                       text='Login', font=('inter', 25), fg_color="grey", command=validateLogIn) 
+button = ctk.CTkButton(master=loginFrame,text='Login', font=('inter', 25), fg_color="#5790DF", command=validateLogIn) 
 button.pack(pady=20,padx=200) 
   
 #  Forget password and create new account
