@@ -2,7 +2,6 @@ cities_data = [
   {
     "cityCode": "AJL",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Aizawl",
     "provinceStateCode": "MZ",
     "shortName": "Aizawl"
@@ -10,7 +9,6 @@ cities_data = [
   {
     "cityCode": "AMD",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Ahmedabad",
     "provinceStateCode": "GJ",
     "shortName": "Ahmedabad"
@@ -18,7 +16,6 @@ cities_data = [
   {
     "cityCode": "ATQ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Amritsar",
     "provinceStateCode": "PB",
     "shortName": "Amritsar"
@@ -26,7 +23,6 @@ cities_data = [
   {
     "cityCode": "AYJ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Ayodhya",
     "provinceStateCode": "UP",
     "shortName": "Ayodhya"
@@ -34,7 +30,6 @@ cities_data = [
   {
     "cityCode": "BBI",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Bhubaneswar",
     "provinceStateCode": "OR",
     "shortName": "Bhubaneswar"
@@ -42,7 +37,6 @@ cities_data = [
   {
     "cityCode": "BDQ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Vadodara",
     "provinceStateCode": "GJ",
     "shortName": "Vadodara"
@@ -50,7 +44,6 @@ cities_data = [
   {
     "cityCode": "BEK",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Bareli",
     "provinceStateCode": "UP",
     "shortName": "Bareli"
@@ -58,7 +51,6 @@ cities_data = [
   {
     "cityCode": "BHJ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Bhuj",
     "provinceStateCode": "GJ",
     "shortName": "Bhuj"
@@ -66,7 +58,6 @@ cities_data = [
   {
     "cityCode": "BHO",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Bhopal",
     "provinceStateCode": "MP",
     "shortName": "Bhopal"
@@ -74,7 +65,6 @@ cities_data = [
   {
     "cityCode": "BKK",
     "countryCode": "TH",
-    "inActive": "false",
     "name": "Bangkok",
     "provinceStateCode": "null",
     "shortName": "Bangkok"
@@ -82,7 +72,6 @@ cities_data = [
   {
     "cityCode": "BLR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Bengaluru",
     "provinceStateCode": "KA",
     "shortName": "Bengaluru"
@@ -90,7 +79,6 @@ cities_data = [
   {
     "cityCode": "BOM",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Mumbai",
     "provinceStateCode": "MH",
     "shortName": "Mumbai"
@@ -98,7 +86,6 @@ cities_data = [
   {
     "cityCode": "CCJ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kozhikode",
     "provinceStateCode": "KL",
     "shortName": "Kozhikode"
@@ -106,7 +93,6 @@ cities_data = [
   {
     "cityCode": "CCU",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kolkata",
     "provinceStateCode": "WB",
     "shortName": "Kolkata"
@@ -114,7 +100,6 @@ cities_data = [
   {
     "cityCode": "CDP",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kadapa",
     "provinceStateCode": "AP",
     "shortName": "Kadapa"
@@ -122,7 +107,6 @@ cities_data = [
   {
     "cityCode": "CGK",
     "countryCode": "ID",
-    "inActive": "false",
     "name": "Jakarta",
     "provinceStateCode": "null",
     "shortName": "Jakarta"
@@ -130,7 +114,6 @@ cities_data = [
   {
     "cityCode": "CJB",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Coimbatore",
     "provinceStateCode": "TN",
     "shortName": "Coimbatore"
@@ -138,7 +121,6 @@ cities_data = [
   {
     "cityCode": "CMB",
     "countryCode": "LK",
-    "inActive": "false",
     "name": "Colombo",
     "provinceStateCode": "null",
     "shortName": "Colombo"
@@ -146,7 +128,6 @@ cities_data = [
   {
     "cityCode": "CNN",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kannur",
     "provinceStateCode": "KL",
     "shortName": "Kannur"
@@ -154,7 +135,6 @@ cities_data = [
   {
     "cityCode": "COK",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kochi",
     "provinceStateCode": "KL",
     "shortName": "Kochi"
@@ -162,7 +142,6 @@ cities_data = [
   {
     "cityCode": "DAC",
     "countryCode": "BD",
-    "inActive": "false",
     "name": "Dhaka",
     "provinceStateCode": "null",
     "shortName": "Dhaka"
@@ -170,7 +149,6 @@ cities_data = [
   {
     "cityCode": "DBR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Dharbanga",
     "provinceStateCode": "BR",
     "shortName": "Dharbanga"
@@ -178,7 +156,6 @@ cities_data = [
   {
     "cityCode": "DED",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Dehradun",
     "provinceStateCode": "UK",
     "shortName": "Dehradun"
@@ -186,7 +163,6 @@ cities_data = [
   {
     "cityCode": "DEL",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Delhi",
     "provinceStateCode": "DL",
     "shortName": "Delhi"
@@ -194,7 +170,6 @@ cities_data = [
   {
     "cityCode": "DGH",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Deoghar",
     "provinceStateCode": "JH",
     "shortName": "Deoghar"
@@ -202,7 +177,6 @@ cities_data = [
   {
     "cityCode": "DHM",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Dharamsala",
     "provinceStateCode": "HP",
     "shortName": "Dharamsala"
@@ -210,7 +184,6 @@ cities_data = [
   {
     "cityCode": "DIB",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Dibrugarh",
     "provinceStateCode": "AS",
     "shortName": "Dibrugarh"
@@ -218,7 +191,6 @@ cities_data = [
   {
     "cityCode": "DIU",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Diu",
     "provinceStateCode": "DD",
     "shortName": "Diu"
@@ -226,7 +198,6 @@ cities_data = [
   {
     "cityCode": "DKR",
     "countryCode": "SN",
-    "inActive": "false",
     "name": "Dakar",
     "provinceStateCode": "null",
     "shortName": "Dakar"
@@ -234,7 +205,6 @@ cities_data = [
   {
     "cityCode": "DMU",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Dimapur",
     "provinceStateCode": "NL",
     "shortName": "Dimapur"
@@ -242,7 +212,6 @@ cities_data = [
   {
     "cityCode": "DOH",
     "countryCode": "QA",
-    "inActive": "false",
     "name": "Doha",
     "provinceStateCode": "null",
     "shortName": "Doha"
@@ -250,7 +219,6 @@ cities_data = [
   {
     "cityCode": "DXB",
     "countryCode": "AE",
-    "inActive": "false",
     "name": "Dubai",
     "provinceStateCode": "null",
     "shortName": "Dubai"
@@ -258,7 +226,6 @@ cities_data = [
   {
     "cityCode": "GAU",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Guwahati",
     "provinceStateCode": "AS",
     "shortName": "Guwahati"
@@ -266,7 +233,6 @@ cities_data = [
   {
     "cityCode": "GOI",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Goa",
     "provinceStateCode": "GA",
     "shortName": "Goa"
@@ -274,7 +240,6 @@ cities_data = [
   {
     "cityCode": "GOP",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Gorakhpur",
     "provinceStateCode": "UP",
     "shortName": "Gorakhpur"
@@ -282,7 +247,6 @@ cities_data = [
   {
     "cityCode": "GOX",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "North Goa",
     "provinceStateCode": "GA",
     "shortName": "North Goa"
@@ -290,7 +254,6 @@ cities_data = [
   {
     "cityCode": "GWL",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Gwalior",
     "provinceStateCode": "MP",
     "shortName": "Gwalior"
@@ -298,7 +261,6 @@ cities_data = [
   {
     "cityCode": "HBX",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Hubli",
     "provinceStateCode": "KA",
     "shortName": "Hubli"
@@ -306,7 +268,6 @@ cities_data = [
   {
     "cityCode": "HGI",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Itanagar",
     "provinceStateCode": "AR",
     "shortName": "Itanagar"
@@ -314,7 +275,6 @@ cities_data = [
   {
     "cityCode": "HIN",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Ghaziabad",
     "provinceStateCode": "UP",
     "shortName": "Ghaziabad"
@@ -322,7 +282,6 @@ cities_data = [
   {
     "cityCode": "HJR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Khajuraho",
     "provinceStateCode": "MP",
     "shortName": "Khajuraho"
@@ -330,7 +289,6 @@ cities_data = [
   {
     "cityCode": "HKT",
     "countryCode": "TH",
-    "inActive": "false",
     "name": "Phuket",
     "provinceStateCode": "null",
     "shortName": "Phuket"
@@ -338,7 +296,6 @@ cities_data = [
   {
     "cityCode": "HSR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Hirasar",
     "provinceStateCode": "GJ",
     "shortName": "Hirasar"
@@ -346,7 +303,6 @@ cities_data = [
   {
     "cityCode": "HYD",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Hyderabad",
     "provinceStateCode": "TS",
     "shortName": "Hyderabad"
@@ -354,7 +310,6 @@ cities_data = [
   {
     "cityCode": "IDR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Indore",
     "provinceStateCode": "MP",
     "shortName": "Indore"
@@ -362,7 +317,6 @@ cities_data = [
   {
     "cityCode": "IMF",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Imphal",
     "provinceStateCode": "MN",
     "shortName": "Imphal"
@@ -370,7 +324,6 @@ cities_data = [
   {
     "cityCode": "ISK",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Nashik",
     "provinceStateCode": "MH",
     "shortName": "Nashik"
@@ -378,7 +331,6 @@ cities_data = [
   {
     "cityCode": "IXA",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Agartala",
     "provinceStateCode": "TR",
     "shortName": "Agartala"
@@ -386,7 +338,6 @@ cities_data = [
   {
     "cityCode": "IXB",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Bagdogra",
     "provinceStateCode": "WB",
     "shortName": "Bagdogra"
@@ -394,7 +345,6 @@ cities_data = [
   {
     "cityCode": "IXC",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Chandigarh",
     "provinceStateCode": "CH",
     "shortName": "Chandigarh"
@@ -402,7 +352,6 @@ cities_data = [
   {
     "cityCode": "IXD",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Allahabad",
     "provinceStateCode": "UP",
     "shortName": "Allahabad"
@@ -410,7 +359,6 @@ cities_data = [
   {
     "cityCode": "IXE",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Mangalore",
     "provinceStateCode": "KA",
     "shortName": "Mangalore"
@@ -418,7 +366,6 @@ cities_data = [
   {
     "cityCode": "IXG",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Belgaum",
     "provinceStateCode": "KA",
     "shortName": "Belgaum"
@@ -426,7 +373,6 @@ cities_data = [
   {
     "cityCode": "IXJ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jammu",
     "provinceStateCode": "JK",
     "shortName": "Jammu"
@@ -434,7 +380,6 @@ cities_data = [
   {
     "cityCode": "IXL",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Leh",
     "provinceStateCode": "LA",
     "shortName": "Leh"
@@ -442,7 +387,6 @@ cities_data = [
   {
     "cityCode": "IXM",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Madurai",
     "provinceStateCode": "TN",
     "shortName": "Madurai"
@@ -450,7 +394,6 @@ cities_data = [
   {
     "cityCode": "IXR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Ranchi",
     "provinceStateCode": "JH",
     "shortName": "Ranchi"
@@ -458,7 +401,6 @@ cities_data = [
   {
     "cityCode": "IXS",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Silchar",
     "provinceStateCode": "AS",
     "shortName": "Silchar"
@@ -466,7 +408,6 @@ cities_data = [
   {
     "cityCode": "IXU",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Aurangabad",
     "provinceStateCode": "MH",
     "shortName": "Aurangabad"
@@ -474,7 +415,6 @@ cities_data = [
   {
     "cityCode": "IXZ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Port Blair",
     "provinceStateCode": "AN",
     "shortName": "Port Blair"
@@ -482,7 +422,6 @@ cities_data = [
   {
     "cityCode": "JAI",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jaipur",
     "provinceStateCode": "RJ",
     "shortName": "Jaipur"
@@ -490,7 +429,6 @@ cities_data = [
   {
     "cityCode": "JDH",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jodhpur",
     "provinceStateCode": "RJ",
     "shortName": "Jodhpur"
@@ -498,7 +436,6 @@ cities_data = [
   {
     "cityCode": "JED",
     "countryCode": "SA",
-    "inActive": "false",
     "name": "Jeddah",
     "provinceStateCode": "null",
     "shortName": "Jeddah"
@@ -506,7 +443,6 @@ cities_data = [
   {
     "cityCode": "JGB",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jagdalpur",
     "provinceStateCode": "CG",
     "shortName": "Jagdalpur"
@@ -514,7 +450,6 @@ cities_data = [
   {
     "cityCode": "JLR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jabalpur",
     "provinceStateCode": "MP",
     "shortName": "Jabalpur"
@@ -522,7 +457,6 @@ cities_data = [
   {
     "cityCode": "JRG",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jharsuguda",
     "provinceStateCode": "OR",
     "shortName": "Jharsuguda"
@@ -530,7 +464,6 @@ cities_data = [
   {
     "cityCode": "JRH",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jorhat",
     "provinceStateCode": "AS",
     "shortName": "Jorhat"
@@ -538,7 +471,6 @@ cities_data = [
   {
     "cityCode": "JSA",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Jaisalmer",
     "provinceStateCode": "RJ",
     "shortName": "Jaisalmer"
@@ -546,7 +478,6 @@ cities_data = [
   {
     "cityCode": "KJB",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kurnool",
     "provinceStateCode": "AP",
     "shortName": "Kurnool"
@@ -554,7 +485,6 @@ cities_data = [
   {
     "cityCode": "KLH",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kolhapur",
     "provinceStateCode": "MH",
     "shortName": "Kolhapur"
@@ -562,7 +492,6 @@ cities_data = [
   {
     "cityCode": "KNU",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kanpur",
     "provinceStateCode": "UP",
     "shortName": "Kanpur"
@@ -570,7 +499,6 @@ cities_data = [
   {
     "cityCode": "KQH",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Kishangarh",
     "provinceStateCode": "RJ",
     "shortName": "Kishangarh"
@@ -578,7 +506,6 @@ cities_data = [
   {
     "cityCode": "KTM",
     "countryCode": "NP",
-    "inActive": "false",
     "name": "Kathmandu",
     "provinceStateCode": "null",
     "shortName": "Kathmandu"
@@ -586,7 +513,6 @@ cities_data = [
   {
     "cityCode": "LKO",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Lucknow",
     "provinceStateCode": "UP",
     "shortName": "Lucknow"
@@ -594,7 +520,6 @@ cities_data = [
   {
     "cityCode": "LUH",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Ludhiana",
     "provinceStateCode": "PB",
     "shortName": "Ludhiana"
@@ -602,7 +527,6 @@ cities_data = [
   {
     "cityCode": "LUZ",
     "countryCode": "PL",
-    "inActive": "false",
     "name": "Lublin",
     "provinceStateCode": "null",
     "shortName": "Lublin"
@@ -610,7 +534,6 @@ cities_data = [
   {
     "cityCode": "MAA",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Chennai",
     "provinceStateCode": "TN",
     "shortName": "Chennai"
@@ -618,7 +541,6 @@ cities_data = [
   {
     "cityCode": "MCT",
     "countryCode": "OM",
-    "inActive": "false",
     "name": "Muscat",
     "provinceStateCode": "null",
     "shortName": "Muscat"
@@ -626,7 +548,6 @@ cities_data = [
   {
     "cityCode": "MYQ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Mysore",
     "provinceStateCode": "KA",
     "shortName": "Mysore"
@@ -634,7 +555,6 @@ cities_data = [
   {
     "cityCode": "NAG",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Nagpur",
     "provinceStateCode": "MH",
     "shortName": "Nagpur"
@@ -642,7 +562,6 @@ cities_data = [
   {
     "cityCode": "PAT",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Patna",
     "provinceStateCode": "BR",
     "shortName": "Patna"
@@ -650,7 +569,6 @@ cities_data = [
   {
     "cityCode": "PGH",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Pantnagar",
     "provinceStateCode": "UK",
     "shortName": "Pantnagar"
@@ -658,7 +576,6 @@ cities_data = [
   {
     "cityCode": "PNQ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Pune",
     "provinceStateCode": "MH",
     "shortName": "Pune"
@@ -666,7 +583,6 @@ cities_data = [
   {
     "cityCode": "RAJ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Rajkot",
     "provinceStateCode": "GJ",
     "shortName": "Rajkot"
@@ -674,7 +590,6 @@ cities_data = [
   {
     "cityCode": "RDP",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Durgapur",
     "provinceStateCode": "WB",
     "shortName": "Durgapur"
@@ -682,7 +597,6 @@ cities_data = [
   {
     "cityCode": "RJA",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Rajahmundry",
     "provinceStateCode": "AP",
     "shortName": "Rajahmundry"
@@ -690,7 +604,6 @@ cities_data = [
   {
     "cityCode": "RPR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Raipur",
     "provinceStateCode": "CG",
     "shortName": "Raipur"
@@ -698,7 +611,6 @@ cities_data = [
   {
     "cityCode": "RQY",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Shivamogga",
     "provinceStateCode": "KA",
     "shortName": "Shivamogga"
@@ -706,7 +618,6 @@ cities_data = [
   {
     "cityCode": "SAG",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Shirdi",
     "provinceStateCode": "MH",
     "shortName": "Shirdi"
@@ -714,7 +625,6 @@ cities_data = [
   {
     "cityCode": "SHJ",
     "countryCode": "AE",
-    "inActive": "false",
     "name": "Sharjah",
     "provinceStateCode": "null",
     "shortName": "Sharjah"
@@ -722,7 +632,6 @@ cities_data = [
   {
     "cityCode": "SHL",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Shillong",
     "provinceStateCode": "ML",
     "shortName": "Shillong"
@@ -730,7 +639,6 @@ cities_data = [
   {
     "cityCode": "SIN",
     "countryCode": "SG",
-    "inActive": "false",
     "name": "Singapore",
     "provinceStateCode": "null",
     "shortName": "Singapore"
@@ -738,7 +646,6 @@ cities_data = [
   {
     "cityCode": "STV",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Surat Gujarat",
     "provinceStateCode": "GJ",
     "shortName": "Surat Gujarat"
@@ -746,7 +653,6 @@ cities_data = [
   {
     "cityCode": "SXR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Srinagar",
     "provinceStateCode": "JK",
     "shortName": "Srinagar"
@@ -754,7 +660,6 @@ cities_data = [
   {
     "cityCode": "SXV",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Salem",
     "provinceStateCode": "TN",
     "shortName": "Salem"
@@ -762,7 +667,6 @@ cities_data = [
   {
     "cityCode": "TCR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Tuticorin",
     "provinceStateCode": "TN",
     "shortName": "Tuticorin"
@@ -770,7 +674,6 @@ cities_data = [
   {
     "cityCode": "TIR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Tirupati",
     "provinceStateCode": "AP",
     "shortName": "Tirupati"
@@ -778,7 +681,6 @@ cities_data = [
   {
     "cityCode": "TRV",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Thiruvananthapuram",
     "provinceStateCode": "KL",
     "shortName": "Thiruvananthapuram"
@@ -786,7 +688,6 @@ cities_data = [
   {
     "cityCode": "TRZ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Tiruchirappalli",
     "provinceStateCode": "TN",
     "shortName": "Tiruchirappalli"
@@ -794,7 +695,6 @@ cities_data = [
   {
     "cityCode": "UDR",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Udaipur",
     "provinceStateCode": "RJ",
     "shortName": "Udaipur"
@@ -802,7 +702,6 @@ cities_data = [
   {
     "cityCode": "VGA",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Vijayawada",
     "provinceStateCode": "AP",
     "shortName": "Vijayawada"
@@ -810,7 +709,6 @@ cities_data = [
   {
     "cityCode": "VNS",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Varanasi",
     "provinceStateCode": "UP",
     "shortName": "Varanasi"
@@ -818,7 +716,6 @@ cities_data = [
   {
     "cityCode": "VTZ",
     "countryCode": "IN",
-    "inActive": "false",
     "name": "Visakhapatnam",
     "provinceStateCode": "AP",
     "shortName": "Visakhapatnam"
