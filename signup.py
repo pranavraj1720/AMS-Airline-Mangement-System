@@ -75,18 +75,6 @@ emailEntry.grid(row=1, column=0, pady=(10,15), padx=10)
 passEntry = ctk.CTkEntry(master=SignupFrame, placeholder_text="password", width=400, font=('calibri', 25), corner_radius=10, border_color="grey", fg_color="white", border_width=2,  show="*")
 passEntry.grid(row=2, column=0, pady=(10,15), padx=10)
 
-# def validate_numeric_ageInput():
-#     ageInput = ageEntry.get()
-#     print(ageInput)
-#     if not ageInput.isdigit():
-#         error_label.configure(text="ONLY NUMBERS ARE ALLOWED")
-#         error_label.grid(row=6, column=0, columnspan=2, pady=20) 
-#     elif (int(ageInput)>=100):
-#         error_label.configure(text="ENTER VALID AGE")
-#         error_label.grid(row=6, column=0, columnspan=2, pady=20)
-#     else:
-#         error_label.configure(text="")
-#         error_label.grid_forget()
 
 
 def validate_signupForm():
@@ -94,25 +82,6 @@ def validate_signupForm():
     email = emailEntry.get()
     age = ageEntry.get()
     contact = contactEntry.get()
-
-    all_entries = {
-        "username" : username,
-        "email" : email,
-        "age" : age,
-        "contact" : contact,
-    }
-
-
-    
-
-    for key, value in all_entries.items():
-        if value == "":
-            error_label.configure(text="Please Add Items", text_color="red", font=('inter', 18))
-            error_label.grid(row=6, column=0, columnspan=2, pady=(0, 10))
-            return
-    
-    
-
 
     if not username:
         error_label.configure(text="Please enter a username", text_color="red", font=('inter', 18))
