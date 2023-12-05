@@ -1,5 +1,5 @@
 import mysql.connector
-
+from data import cities_data
 class sessionManager:
     def __init__(self, host="localhost", user="root", password="pranavmysql", database="newuserdb"):
         self.db = mysql.connector.connect(
@@ -18,7 +18,15 @@ class sessionManager:
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS sessions (
                 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-                username VARCHAR(255) NOT NULL
+                username VARCHAR(255) NOT NULL,
+                selectedOriginCode VARCHAR(255),
+                selectedDepartureCode VARCHAR(255),
+                selectedDepartureTime VARCHAR(255),
+                selectedArrivalTime VARCHAR(255),
+                flightType VARCHAR(255),
+                economyFair VARCHAR(255),
+                businessFair VARCHAR(255),
+                firstClassFair VARCHAR(255)      
             )
         ''')      
         self.db.commit()
@@ -33,10 +41,50 @@ class sessionManager:
         cursor.execute("SELECT username FROM sessions ORDER BY id DESC LIMIT 1")
         result = cursor.fetchone()
         if result:
+            print(result[0])
             return result[0]
         else:
             return None
     
+    def set_flights_data(self, selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair):
+        username = self.get_current_user()
+        cursor = self.db.cursor()
+        cursor.execute("""
+        UPDATE sessions
+        SET selectedOriginCode = %s, selectedDepartureCode = %s, selectedDepartureTime = %s, selectedArrivalTime = %s, flightType = %s, economyFair = %s, businessFair = %s, firstClassFair = %s
+        WHERE username = %s
+    """, (selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime , flightType, economyFair, businessFair, firstClassFair, username))
+        self.db.commit()
+
+
+    
+    def get_flights_data(self):
+        cursor = self.db.cursor()
+        cursor.execute("SELECT selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair  FROM sessions ORDER BY id DESC LIMIT 1")
+        result = cursor.fetchone()
+        
+        selectedDepartureCode = None
+        selectedOriginCode = None
+        selectedDepartureTime = None
+        selectedArrivalTime = None
+        flightType = None
+        economyFair = None
+        businessFair = None
+        firstClassFair = None
+        if result: 
+            selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair = result
+
+
+        departure_name = "".join([city['name'] for city in cities_data if selectedDepartureCode == city['cityCode']])
+        origin_name = "".join([city['name'] for city in cities_data if selectedOriginCode == city['cityCode']])
+
+        return origin_name, departure_name , selectedArrivalTime, selectedDepartureTime, selectedOriginCode, selectedDepartureCode, flightType, economyFair, businessFair, firstClassFair
+                
+        
+
+        
+
+
     def remove_session(self, username):
         cursor = self.db.cursor()
         cursor.execute("DELETE FROM sessions WHERE username = %s", (username,))
