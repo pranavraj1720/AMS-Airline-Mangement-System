@@ -120,4 +120,3 @@ class INDIGO_DB:
 
         return filtered_journeys
 
-

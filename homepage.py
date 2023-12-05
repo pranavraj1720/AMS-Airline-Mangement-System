@@ -10,6 +10,7 @@ from indigo_api import INDIGO_DB
 from data import cities_data
 from datetime import datetime
 from session_manager import sessionManager
+import subprocess
 # from login import user_info
 resolution = get_monitors()[0]
 screenWidth = resolution.width
@@ -114,6 +115,7 @@ def convert_time_format(input_time):
     
     return formatted_time
 
+
 def create_box_frame(recommended_flights_frame, journey_data, row_index):
     boxFrame = ctk.CTkFrame(recommended_flights_frame, fg_color="#fff", )
     boxFrame.grid(row=row_index, column=0, sticky="new", pady=(10, 10), padx=(10, 10))
@@ -133,12 +135,26 @@ def create_box_frame(recommended_flights_frame, journey_data, row_index):
     layOverLabel = ctk.CTkLabel(boxFrame, text=f"{journey_data['flightType']}", font=('Inter Bold', 23), text_color="black" )
     layOverLabel.grid(row=0, column=0, pady=(20, 0), padx=(250, 0), sticky="w")
 
-    passengerFares = ctk.CTkLabel(boxFrame, text=f"₹ {convert_amount_format(journey_data['passengerFares'][-1]['totalFareAmount'])}", font=('Inter Bold', 23), text_color="black", )
+    passengerFares = ctk.CTkLabel(boxFrame, text=f"₹ {convert_amount_format(journey_data['passengerFares'][0]['totalFareAmount'])}", font=('Inter Bold', 23), text_color="black", )
     passengerFares.grid(row=0, column=0, pady=(20, 0), padx=(380, 0), sticky="w")
 
-    details_button = ctk.CTkButton(boxFrame, text="Book", text_color="#fff", font=('Inter', 18), corner_radius=25, width=150, height=40, fg_color="#5790DF")
-    details_button.grid(row=0, column=0, pady=(20, 0), padx=(750, 10), sticky="w")
+    
 
+
+    def flight():
+        selectedOriginCode = f"{journey_data['designator']['origin']}"
+        selectedDepartureCode = f"{journey_data['designator']['destination']}"
+        selectedDepartureTime = f"{convert_time_format(journey_data['designator']['departure'])}"
+        selectedArrivalTime = f"{convert_time_format(journey_data['designator']['arrival'])}"
+        flightType = f"{journey_data['flightType']}" 
+        economyFair = f"{convert_amount_format(journey_data['passengerFares'][0]['totalFareAmount'])}"
+        businessFair = f"{convert_amount_format(journey_data['passengerFares'][1]['totalFareAmount'])}"
+        firstClassFair = f"{convert_amount_format(journey_data['passengerFares'][2]['totalFareAmount'])}"
+        sessionManager().set_flights_data(selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair)
+        subprocess.run(["python", "bookings.py"])  
+
+    details_button = ctk.CTkButton(boxFrame, text="Book", text_color="#fff", font=('Inter', 18), corner_radius=25, width=150, height=40, fg_color="#5790DF", command=flight)
+    details_button.grid(row=0, column=0, pady=(20, 0), padx=(750, 10), sticky="w")
 
 
     recommendedFlights.grid_rowconfigure(1, weight=1)
