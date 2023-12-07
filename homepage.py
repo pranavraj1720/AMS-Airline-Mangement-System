@@ -141,7 +141,7 @@ def create_box_frame(recommended_flights_frame, journey_data, row_index):
     
 
 
-    def flight():
+    def flight_data():
         selectedOriginCode = f"{journey_data['designator']['origin']}"
         selectedDepartureCode = f"{journey_data['designator']['destination']}"
         selectedDepartureTime = f"{convert_time_format(journey_data['designator']['departure'])}"
@@ -153,7 +153,7 @@ def create_box_frame(recommended_flights_frame, journey_data, row_index):
         sessionManager().set_flights_data(selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair)
         subprocess.run(["python", "bookings.py"])  
 
-    details_button = ctk.CTkButton(boxFrame, text="Book", text_color="#fff", font=('Inter', 18), corner_radius=25, width=150, height=40, fg_color="#5790DF", command=flight)
+    details_button = ctk.CTkButton(boxFrame, text="Book", text_color="#fff", font=('Inter', 18), corner_radius=25, width=150, height=40, fg_color="#5790DF", command=flight_data)
     details_button.grid(row=0, column=0, pady=(20, 0), padx=(750, 10), sticky="w")
 
 
