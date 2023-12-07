@@ -81,7 +81,6 @@ class sessionManager:
         return origin_name, departure_name , selectedArrivalTime, selectedDepartureTime, selectedOriginCode, selectedDepartureCode, flightType, economyFair, businessFair, firstClassFair
                 
         
-
         
 
 
