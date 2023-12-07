@@ -3,6 +3,7 @@ from screeninfo import get_monitors
 from session_manager import sessionManager
 import re
 import mysql.connector
+import subprocess
 root = ctk.CTk()
 # Setting appearance mode and color theme 
 ctk.set_appearance_mode("black")
@@ -100,7 +101,9 @@ fairMenu.set("Select")
 def is_valid_email(email):
     email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
     return re.match(email_pattern, email)
-
+def open_new_file():
+    root.destroy()
+    subprocess.run(["python", "payment.py"]) 
 def generate_passenger_details(row_index, index):
     passengerFields = ctk.CTkFrame(bookings, fg_color="light grey", height=400)
     passengerFields.grid(row=row_index, column=0, sticky="ew" ,  padx=(10,20), pady=(20,20))
@@ -175,7 +178,8 @@ def generate_passenger_details(row_index, index):
             error_label.configure(text="")
             error_label.grid_forget()
             booked_flights()
-    
+            open_new_file()
+
     def delete_passenger_widget():
         passengerFields.destroy()
 
