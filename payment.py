@@ -3,8 +3,14 @@ import re
 import customtkinter as ctk
 from screeninfo import get_monitors
 import mysql.connector
+import subprocess
+from session_manager import sessionManager
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
+
+def open_new_file():
+    root.destroy()
+    subprocess.run(["python", "manage_bookings.py"]) 
 
 #root = Tk()
 root = ctk.CTk()
@@ -69,6 +75,60 @@ tabs.set("UPI")
 
 
 def gen_card_info(frame, type = "DEBIT Card"):
+    def cancel_payment():
+        currentUsername = sessionManager().get_current_user()
+        if currentUsername:
+            sessionManager().remove_booked_flights(currentUsername)
+            root.destroy()
+    def add_booked_flights_data():
+        flight_data = sessionManager().get_flights_data()
+        db = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            passwd="pranavmysql",
+            database="newuserdb"
+        )
+
+        origincityCode = flight_data[4]
+        departurecityCode = flight_data[5]
+        originTime = flight_data[2]
+        departureTime = flight_data[3]
+        flightType = flight_data[6]
+        flightDate = flight_data[10]
+
+        mycursor = db.cursor()
+
+        current_user = sessionManager().get_current_user()
+
+        # Update the latest row with empty flight data for the current user
+        query = """
+        UPDATE bookedflights 
+        SET selectedOriginCode = COALESCE(selectedOriginCode, %s), 
+            selectedDepartureCode = COALESCE(selectedDepartureCode, %s), 
+            selectedDepartureTime = COALESCE(selectedDepartureTime, %s), 
+            selectedArrivalTime = COALESCE(selectedArrivalTime, %s), 
+            flightType = COALESCE(flightType, %s),
+            flightDate = COALESCE(flightDate, %s)
+        WHERE username = %s
+        AND (selectedOriginCode IS NULL OR selectedOriginCode = '')
+        AND (selectedDepartureCode IS NULL OR selectedDepartureCode = '')
+        AND (selectedDepartureTime IS NULL OR selectedDepartureTime = '')
+        AND (selectedArrivalTime IS NULL OR selectedArrivalTime = '')
+        AND (flightType IS NULL OR flightType = '')
+        AND (flightDate IS NULL OR flightDate = '')
+        ORDER BY id DESC
+        LIMIT 1
+    """
+
+        mycursor.execute(query, (origincityCode, departurecityCode, departureTime, originTime, flightType, flightDate , current_user)) # type: ignore
+        db.commit()
+        mycursor.close()
+        db.close()
+
+
+
+
+
         
     def format_card_number(event):
         card_number = cardNumber.get()
@@ -110,7 +170,8 @@ def gen_card_info(frame, type = "DEBIT Card"):
         else:
             error_label.configure(text="")
             error_label.grid_forget()
-            pass
+            add_booked_flights_data()
+            open_new_file()
     
     CardLabel = ctk.CTkLabel(tabs.tab(frame), text="{}".format(type), font=('Poppins Bold', 27), text_color="#000")
 
@@ -137,6 +198,8 @@ def gen_card_info(frame, type = "DEBIT Card"):
     payButton = ctk.CTkButton(tabs.tab(frame), text="Pay",fg_color="#5790DF" ,text_color="white", font=('Inter', 18), corner_radius=25, width=120, height=40, command=validate_payment)
     payButton.grid(row=7, column=0, pady=(20, 50), padx=(20,0), sticky="w")
 
+    cancelPayment = ctk.CTkButton(tabs.tab(frame), text="Cancel Payment",fg_color="#EA4E4C" ,text_color="white", font=('Inter', 18), corner_radius=25, width=120, height=40, command=cancel_payment)
+    cancelPayment.grid(row=7, column=0, pady=(20, 50), padx=(150,0), sticky="w")
 
     error_label = ctk.CTkLabel(tabs.tab(frame), text="", text_color="red",  font=('Inter', 15))
     error_label.grid(row=8, column=0, pady=(0, 0), padx=(250,0)) 
@@ -144,6 +207,58 @@ def gen_card_info(frame, type = "DEBIT Card"):
 
 
 def gen_upi_info(frame, type = "UPI"):
+    def cancel_payment():
+        currentUsername = sessionManager().get_current_user()
+        if currentUsername:
+            sessionManager().remove_booked_flights(currentUsername)
+            root.destroy()
+    def add_booked_flights_data():
+        flight_data = sessionManager().get_flights_data()
+        db = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            passwd="pranavmysql",
+            database="newuserdb"
+        )
+
+        origincityCode = flight_data[4]
+        departurecityCode = flight_data[5]
+        originTime = flight_data[2]
+        departureTime = flight_data[3]
+        flightType = flight_data[6]
+        flightDate = flight_data[10]
+        mycursor = db.cursor()
+
+        # Assuming there's an 'id' column that uniquely identifies each row
+        current_user = sessionManager().get_current_user()
+
+        # Update the latest row with empty flight data for the current user
+        query = """
+        UPDATE bookedflights 
+        SET selectedOriginCode = COALESCE(selectedOriginCode, %s), 
+            selectedDepartureCode = COALESCE(selectedDepartureCode, %s), 
+            selectedDepartureTime = COALESCE(selectedDepartureTime, %s), 
+            selectedArrivalTime = COALESCE(selectedArrivalTime, %s), 
+            flightType = COALESCE(flightType, %s),
+            flightDate = COALESCE(flightDate, %s)
+        WHERE username = %s
+        AND (selectedOriginCode IS NULL OR selectedOriginCode = '')
+        AND (selectedDepartureCode IS NULL OR selectedDepartureCode = '')
+        AND (selectedDepartureTime IS NULL OR selectedDepartureTime = '')
+        AND (selectedArrivalTime IS NULL OR selectedArrivalTime = '')
+        AND (flightType IS NULL OR flightType = '')
+        AND (flightDate IS NULL OR flightDate = '')
+        ORDER BY id DESC
+        LIMIT 1
+    """
+
+        mycursor.execute(query, (origincityCode, departurecityCode, departureTime, originTime, flightType, flightDate ,current_user)) # type: ignore
+        db.commit()
+        mycursor.close()
+        db.close()
+
+
+
     def validate_payment():
         upi_number = upiNumber.get()
 
@@ -154,7 +269,8 @@ def gen_upi_info(frame, type = "UPI"):
         else:
             error_label.configure(text="")
             error_label.grid_forget()
-            pass
+            add_booked_flights_data()
+            open_new_file()
 
     def format_upi_number(event):
         upi_number = upiNumber.get()
@@ -176,6 +292,8 @@ def gen_upi_info(frame, type = "UPI"):
     payButton = ctk.CTkButton(tabs.tab(frame), text="Pay",fg_color="#5790DF" ,text_color="white", font=('Inter', 18), corner_radius=25, width=120, height=40, command=validate_payment)
     payButton.grid(row=7, column=0, pady=(20, 50), padx=(20,0), sticky="w")
     
+    cancelPayment = ctk.CTkButton(tabs.tab(frame), text="Cancel Payment",fg_color="#EA4E4C" ,text_color="white", font=('Inter', 18), corner_radius=25, width=120, height=40, command=cancel_payment)
+    cancelPayment.grid(row=7, column=0, pady=(20, 50), padx=(150,0), sticky="w")
 
     error_label = ctk.CTkLabel(tabs.tab(frame), text="", text_color="red",  font=('Inter', 15))
     error_label.grid(row=8, column=0, pady=(0, 0), padx=(250,0)) 
