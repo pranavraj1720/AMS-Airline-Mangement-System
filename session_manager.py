@@ -1,3 +1,4 @@
+from tkinter import NO
 import mysql.connector
 from data import cities_data
 class sessionManager:
@@ -26,7 +27,8 @@ class sessionManager:
                 flightType VARCHAR(255),
                 economyFair VARCHAR(255),
                 businessFair VARCHAR(255),
-                firstClassFair VARCHAR(255)      
+                firstClassFair VARCHAR(255),    
+                flightDate VARCHAR(50)
             )
         ''')      
         self.db.commit()
@@ -46,21 +48,29 @@ class sessionManager:
         else:
             return None
     
-    def set_flights_data(self, selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair):
+    def set_flights_data(self, selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair, flightDate):
         username = self.get_current_user()
         cursor = self.db.cursor()
         cursor.execute("""
         UPDATE sessions
-        SET selectedOriginCode = %s, selectedDepartureCode = %s, selectedDepartureTime = %s, selectedArrivalTime = %s, flightType = %s, economyFair = %s, businessFair = %s, firstClassFair = %s
+        SET selectedOriginCode = %s, selectedDepartureCode = %s, selectedDepartureTime = %s, selectedArrivalTime = %s, flightType = %s, economyFair = %s, businessFair = %s, firstClassFair = %s, flightDate = %s
         WHERE username = %s
-    """, (selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime , flightType, economyFair, businessFair, firstClassFair, username))
+    """, (selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime , flightType, economyFair, businessFair, firstClassFair, flightDate, username)) # type: ignore
         self.db.commit()
 
+    def set_view_flight_data(self, username,name, gender, age, contact, email, idProof, selectedFair, selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, flightDate):
+        cursor = self.db.cursor()
+
+        query = "INSERT INTO viewflight (username, name, gender, age, contact, email, idProof, selectedFair, selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, flightDate) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        values = (username, name, gender, age, contact, email, idProof, selectedFair, selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, flightDate)
+
+        cursor.execute(query, values) # type: ignore
+        self.db.commit() 
 
     
     def get_flights_data(self):
         cursor = self.db.cursor()
-        cursor.execute("SELECT selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair  FROM sessions ORDER BY id DESC LIMIT 1")
+        cursor.execute("SELECT selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair, flightDate  FROM sessions ORDER BY id DESC LIMIT 1")
         result = cursor.fetchone()
         
         selectedDepartureCode = None
@@ -71,20 +81,26 @@ class sessionManager:
         economyFair = None
         businessFair = None
         firstClassFair = None
+        flightDate = None
         if result: 
-            selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair = result
+            selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair, flightDate = result
 
 
         departure_name = "".join([city['name'] for city in cities_data if selectedDepartureCode == city['cityCode']])
         origin_name = "".join([city['name'] for city in cities_data if selectedOriginCode == city['cityCode']])
 
-        return origin_name, departure_name , selectedArrivalTime, selectedDepartureTime, selectedOriginCode, selectedDepartureCode, flightType, economyFair, businessFair, firstClassFair
+        return origin_name, departure_name , selectedArrivalTime, selectedDepartureTime, selectedOriginCode, selectedDepartureCode, flightType, economyFair, businessFair, firstClassFair, flightDate
                 
-        
-        
-
-
     def remove_session(self, username):
         cursor = self.db.cursor()
         cursor.execute("DELETE FROM sessions WHERE username = %s", (username,))
+        self.db.commit()
+
+    def remove_booked_flights(self, username):
+        cursor = self.db.cursor()
+        cursor.execute("DELETE FROM bookedflights WHERE username = %s", (username,))
+        self.db.commit()
+    def remove_view_flight(self, username):
+        cursor = self.db.cursor()
+        cursor.execute("DELETE FROM viewflight WHERE username = %s", (username,))
         self.db.commit()
