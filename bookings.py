@@ -40,13 +40,13 @@ boxFrame.grid(row=0, column=0, sticky="nsew", pady=(10, 10), padx=0)
 originCity = ctk.CTkLabel(boxFrame, text=f"{flight_data[0]}", font=('Poppins Bold', 27), text_color="#000")
 originCity.grid(row=0, column=0, pady=(20, 0), padx=(20, 0), sticky="w")
 
-originTime = ctk.CTkLabel(boxFrame, text=f"{flight_data[2]}", font=('Inter ', 19), text_color="#000", )
+originTime = ctk.CTkLabel(boxFrame, text=f"{flight_data[3]}", font=('Inter ', 19), text_color="#000", )
 originTime.grid(row=1, column=0, pady=(0, 20), padx=(20, 0), sticky="w")
 
 departureCity = ctk.CTkLabel(boxFrame, text=f"{flight_data[1]}", font=('Poppins Bold', 27), text_color="#000")
 departureCity.grid(row=0, column=1, pady=(20, 0), padx=(100, 0), sticky="w")
 
-departureTime = ctk.CTkLabel(boxFrame, text=f"{flight_data[3]}", font=('Inter Bold', 19), text_color="#000", )
+departureTime = ctk.CTkLabel(boxFrame, text=f"{flight_data[2]}", font=('Inter Bold', 19), text_color="#000", )
 departureTime.grid(row=1, column=1, pady=(0, 20), padx=(100, 0), sticky="w")
 
 flightType = ctk.CTkLabel(boxFrame, text=f"{flight_data[6]}", font=('Poppins Bold', 27), text_color="#000", )
@@ -148,7 +148,7 @@ def generate_passenger_details(row_index, index):
         database="newuserdb"
 )
         mycursor = db.cursor()
-        mycursor.execute("INSERT INTO bookedFlights (username, name, gender, age, contact, email, idProof, selectedFair) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (username, name, gender, age, contact, email, idProof, fair))
+        mycursor.execute("INSERT INTO bookedflights (username, name, gender, age, contact, email, idProof, selectedFair) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (username, name, gender, age, contact, email, idProof, fair)) # type: ignore
 
 
         db.commit()
