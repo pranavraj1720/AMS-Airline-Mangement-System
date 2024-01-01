@@ -24,6 +24,9 @@ root.geometry(f"{screenWidth}x{screenHeight}")
 root.maxsize(False, False)
 root.title("Book Tickets")
 
+def open_manage_booking():
+    subprocess.run(["python", "manage_bookings.py"]) 
+
 # Creating SideBar
 sideBar = ctk.CTkCanvas(root, width=350, height=screenHeight, bg="white")
 sideBar.grid(row=0, column=0, rowspan=2)  # Adjusting row and rowspan
@@ -35,7 +38,7 @@ userName = ctk.CTkLabel(sideBar, text=f"{currentUsername}", text_color="black", 
 sideBar.create_window(175, 200, window=userName)
 
 manageBookings = ctk.CTkButton(sideBar, text="Manage Bookings", text_color="white", font=('Inter', 15),
-                               bg_color="white", fg_color="#5790DF", corner_radius=25, width=120, height=50)
+                               bg_color="white", fg_color="#5790DF", corner_radius=25, width=120, height=50, command=open_manage_booking)
 sideBar.create_window(175, 280, window=manageBookings)
 
 sideBar.create_line(350, 230, 0, 230, fill="grey", width=2)
@@ -43,6 +46,9 @@ sideBar.create_line(350, 230, 0, 230, fill="grey", width=2)
 faqS = ctk.CTkButton(sideBar, text="FAQs", text_color="white", fg_color="#5790DF", font=('Inter', 15),
                      bg_color="white", corner_radius=25, width=120, height=50)
 sideBar.create_window(175, 350, window=faqS)
+
+
+
 
 def logout():
     if currentUsername:
@@ -150,7 +156,8 @@ def create_box_frame(recommended_flights_frame, journey_data, row_index):
         economyFair = f"{convert_amount_format(journey_data['passengerFares'][0]['totalFareAmount'])}"
         businessFair = f"{convert_amount_format(journey_data['passengerFares'][1]['totalFareAmount'])}"
         firstClassFair = f"{convert_amount_format(journey_data['passengerFares'][2]['totalFareAmount'])}"
-        sessionManager().set_flights_data(selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair)
+        flightDate = f"{convert_date_format(myDate.entry.get())}"
+        sessionManager().set_flights_data(selectedOriginCode, selectedDepartureCode, selectedDepartureTime, selectedArrivalTime, flightType, economyFair, businessFair, firstClassFair, flightDate)
         subprocess.run(["python", "bookings.py"])  
 
     details_button = ctk.CTkButton(boxFrame, text="Book", text_color="#fff", font=('Inter', 18), corner_radius=25, width=150, height=40, fg_color="#5790DF", command=flight_data)
